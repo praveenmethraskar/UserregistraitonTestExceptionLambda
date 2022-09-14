@@ -16,7 +16,7 @@ namespace MSTest_Registration
             REGEX_Registration obj = new REGEX_Registration();
 
             bool expected = true;
-            string FirstName = "Hemant";
+            string FirstName = "Praveen";
 
             //Act
             bool var = obj.ValidateFirstName(FirstName);
