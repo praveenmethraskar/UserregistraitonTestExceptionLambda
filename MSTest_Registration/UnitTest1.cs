@@ -176,5 +176,169 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual(expected, var);
         }
+
+        //UC10
+        //
+
+        [TestMethod]
+        [DataRow("Happy")]
+
+        //Test Case for FirstName passing Happy
+        public void firstName1(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.firstName();
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Sad")]
+
+        //Test Case for FirstName passing Sad
+        public void firstName2(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.firstName();
+
+            //Assert
+            Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Happy")]
+        //Test Case for LastName passing Happy
+
+        public void lastName1(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.lastName();
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Sad")]
+
+        //Test Case for LastName passing Sad
+        public void lastName2(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.lastName();
+
+            //Assert
+            Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+
+        [TestMethod]
+        [DataRow("Happy")]
+
+        //Test Case for Email passing Happy
+        public void Email1(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.Email();
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Sad")]
+
+        //Test Case for Email passing Sad
+        public void Email2(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.Email();
+
+            //Assert
+            Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Happy")]
+
+        //Test Case for phoneNumber passing Happy
+        public void PhoneNumber1(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.PhoneNumber();
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Sad")]
+
+        ////Test Case for phoneNumber passing Sad
+        public void PhoneNumber2(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.PhoneNumber();
+
+            //Assert
+            Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Happy")]
+
+        //Test Case for Password passing Happy
+        public void Password1(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.Password();
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
+        }
+
+        [TestMethod]
+        [DataRow("Sad")]
+
+        ////Test Case for Password passing Sad
+        public void Password2(string message)
+        {
+            //Arange
+            UserRegister user = new UserRegister(message);
+
+            //Act
+            var result = user.Password();
+
+            //Assert
+            Assert.AreEqual("Un-Successful Entry", result);
+        }
     }
 }
