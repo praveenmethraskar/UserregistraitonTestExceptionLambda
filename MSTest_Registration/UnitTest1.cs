@@ -16,7 +16,7 @@ namespace MSTest_Registration
             REGEX_Registration obj = new REGEX_Registration();
 
             bool expected = true;
-            string FirstName = "Praveen";
+            string FirstName = "Hemant";
 
             //Act
             bool var = obj.ValidateFirstName(FirstName);
@@ -32,13 +32,32 @@ namespace MSTest_Registration
         {
             //Arrange
 
-            REGEX_Registration obj = new REGEX_Registration();
+            REGEX_Registration obj1 = new REGEX_Registration();
 
             bool expected = true;
-            string LastName = "Methraskar";
+            string LastName = "Dhurve";
 
             //Act
-            bool var = obj.ValidateFirstName(LastName);
+            bool var = obj1.ValidateFirstName(LastName);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
+
+        //UC3
+
+        [TestMethod]
+        public void Email()
+        {
+            //Arrange
+
+            REGEX_Registration obj2 = new REGEX_Registration();
+
+            bool expected = true;
+            string Email = "hemantdhurve@gmail.com";
+
+            //Act
+            bool var = obj2.ValidateEmail(Email);
 
             //Assert
             Assert.AreEqual(expected, var);
