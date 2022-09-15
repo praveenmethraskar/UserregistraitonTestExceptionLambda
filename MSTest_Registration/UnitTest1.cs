@@ -16,7 +16,7 @@ namespace MSTest_Registration
             REGEX_Registration obj = new REGEX_Registration();
 
             bool expected = true;
-            string FirstName = "Praveen";
+            string FirstName = "Hemant";
 
             //Act
             bool var = obj.ValidateFirstName(FirstName);
@@ -35,7 +35,7 @@ namespace MSTest_Registration
             REGEX_Registration obj1 = new REGEX_Registration();
 
             bool expected = true;
-            string LastName = "Methraskar";
+            string LastName = "Dhurve";
 
             //Act
             bool var = obj1.ValidateFirstName(LastName);
@@ -54,7 +54,7 @@ namespace MSTest_Registration
             REGEX_Registration obj2 = new REGEX_Registration();
 
             bool expected = true;
-            string Email = "praveenmethraskar@gmail.com";
+            string Email = "hemantdhurve@gmail.com";
 
             //Act
             bool var = obj2.ValidateEmail(Email);
@@ -73,10 +73,29 @@ namespace MSTest_Registration
             REGEX_Registration obj3 = new REGEX_Registration();
 
             bool expected = true;
-            string PhNumber = "91 8899772222";
+            string PhNumber = "91 7798051897";
 
             //Act
             bool var = obj3.ValidatePhNumber(PhNumber);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
+
+        //UC5
+
+        [TestMethod]
+        public void PasswordRule1()
+        {
+            //Arrange
+
+            REGEX_Registration obj4 = new REGEX_Registration();
+
+            bool expected = true;
+            string Password1 = "aksjdhfg";
+
+            //Act
+            bool var = obj4.ValidatePassword1(Password1);
 
             //Assert
             Assert.AreEqual(expected, var);
