@@ -138,5 +138,24 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual(expected, var);
         }
+
+        //UC8
+
+        [TestMethod]
+        public void PasswordRule4()
+        {
+            //Arrange
+
+            REGEX_Registration obj7 = new REGEX_Registration();
+
+            bool expected = true;
+            string Password4 = "aS7k%dhfg";
+
+            //Act
+            bool var = obj7.ValidatePassword4(Password4);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
     }
 }

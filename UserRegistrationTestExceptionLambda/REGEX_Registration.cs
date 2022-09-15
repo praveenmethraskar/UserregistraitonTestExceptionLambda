@@ -78,5 +78,15 @@ namespace UserRegistrationTestExceptionLambda
             return Regex.IsMatch(sample, PasswordRule3);
 
         }
+
+        //UC8
+
+        public static string PasswordRule4 = "^(?=.*[A-Z])(?=.*[a-z])(?=.*[0-9])(?=.*[#?!@$%^&*-]).{8,}$";
+
+        public bool ValidatePassword4(string sample)
+        {
+            return Regex.IsMatch(sample, PasswordRule4);
+
+        }
     }
 }
