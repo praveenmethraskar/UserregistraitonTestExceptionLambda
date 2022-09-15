@@ -104,5 +104,78 @@ namespace UserRegistrationTestExceptionLambda
 
         }
 
+        //UC12 Custom Exception
+
+        public void CheckFirstName(string firstName)
+        {
+            if (multi.ValidateFirstName(firstName))
+            {
+                Console.WriteLine("Valid First Name");
+            }
+            else
+            {
+
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.INVALID_FIRSTNAME, "First Name is Invalid");
+
+            }
+        }
+
+        public void CheckLastName(string lastName)
+        {
+            if (multi.ValidateLastName(lastName))
+            {
+                Console.WriteLine("Valid Last Name");
+            }
+            else
+            {
+
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.INVALID_LASTNAME, "Last Name is Invalid");
+
+            }
+        }
+
+        public void CheckEmail(string eMail)
+        {
+            if (multi.ValidateEmail(eMail))
+            {
+                Console.WriteLine("Valid Email");
+            }
+            else
+            {
+
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.INVALID_EMAIL, "Email is Invalid");
+
+            }
+        }
+
+        public void CheckPhoneNumber(string phNumber)
+        {
+            if (multi.ValidatePhNumber(phNumber))
+            {
+                Console.WriteLine("Valid Phone Number");
+            }
+            else
+            {
+
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.INVALID_PHONENUMBER, "Phone Number is Invalid");
+
+            }
+        }
+
+        public void CheckPassword(string password)
+        {
+            //comparting two Password methods
+            if (multi.ValidatePassword1(password) && multi.ValidatePassword4(password))
+            {
+                Console.WriteLine("Valid Password");
+            }
+            else
+            {
+
+                throw new UserRegCustomException(UserRegCustomException.ExceptionType.INVALID_PASSWORD, "Password is Invalid");
+
+            }
+        }
+
     }
 }

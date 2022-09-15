@@ -16,7 +16,7 @@ namespace MSTest_Registration
             REGEX_Registration obj = new REGEX_Registration();
 
             bool expected = true;
-            string FirstName = "praveen";
+            string FirstName = "Hemant";
 
             //Act
             bool var = obj.ValidateFirstName(FirstName);
@@ -35,7 +35,7 @@ namespace MSTest_Registration
             REGEX_Registration obj1 = new REGEX_Registration();
 
             bool expected = true;
-            string LastName = "methraskar";
+            string LastName = "Dhurve";
 
             //Act
             bool var = obj1.ValidateFirstName(LastName);
@@ -54,7 +54,7 @@ namespace MSTest_Registration
             REGEX_Registration obj2 = new REGEX_Registration();
 
             bool expected = true;
-            string Email = "praveen@gmail.com";
+            string Email = "hemantdhurve@gmail.com";
 
             //Act
             bool var = obj2.ValidateEmail(Email);
@@ -351,10 +351,118 @@ namespace MSTest_Registration
             UserRegister user = new UserRegister();
 
             //Act
-            var result = user.MultiEmails("praveen@gmail.com", "mrhd@click.com", "checkit@out.co.in");
+            var result = user.MultiEmails("hemantdhurve@gmail.com", "mrhd@click.com", "checkit@out.co.in");
 
             //Assert
             Assert.AreEqual("Successful Entry", result);
+        }
+
+        //UC12 
+        //Throw Custom Exception in case of invalid User Details 
+        [TestMethod]
+        [DataRow("123Hemant")]
+
+        //For Invalid First Name
+        public void TestFirstName(string fName)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckFirstName(fName);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("First Name is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("Dhurve1254")]
+
+        //For Invalid Last Name
+        public void TestLastName(string lName)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckLastName(lName);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Last Name is Invalid", e.Message);
+            }
+        }
+
+
+        [TestMethod]
+        [DataRow("hemant@dhurve007@gmail.com")]
+
+        //For Invalid Email
+        public void TestEmail(string email)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckEmail(email);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Email is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("91 7798dsa222")]
+
+        //For Invalid Phone Number
+        public void TestPhNumber(string phnumber)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckPhoneNumber(phnumber);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Phone Number is Invalid", e.Message);
+            }
+        }
+
+        [TestMethod]
+        [DataRow("ws345%$#sd")]
+
+        //For Invalid Password
+        public void TestPassword(string password)
+        {
+            try
+            {
+                //Arrange
+                UserRegister user = new UserRegister();
+
+                //Act
+                user.CheckPassword(password);
+            }
+            catch (UserRegCustomException e)
+            {
+                //Assert
+                Assert.AreEqual("Password is Invalid", e.Message);
+            }
         }
     }
 }
