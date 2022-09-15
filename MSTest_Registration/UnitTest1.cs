@@ -16,7 +16,7 @@ namespace MSTest_Registration
             REGEX_Registration obj = new REGEX_Registration();
 
             bool expected = true;
-            string FirstName = "Hemant";
+            string FirstName = "praveen";
 
             //Act
             bool var = obj.ValidateFirstName(FirstName);
@@ -35,7 +35,7 @@ namespace MSTest_Registration
             REGEX_Registration obj1 = new REGEX_Registration();
 
             bool expected = true;
-            string LastName = "Dhurve";
+            string LastName = "methraskar";
 
             //Act
             bool var = obj1.ValidateFirstName(LastName);
@@ -54,7 +54,7 @@ namespace MSTest_Registration
             REGEX_Registration obj2 = new REGEX_Registration();
 
             bool expected = true;
-            string Email = "hemantdhurve@gmail.com";
+            string Email = "praveen@gmail.com";
 
             //Act
             bool var = obj2.ValidateEmail(Email);
@@ -339,6 +339,22 @@ namespace MSTest_Registration
 
             //Assert
             Assert.AreEqual("Un-Successful Entry", result);
+        }
+
+        //UC11
+        //Multiple Emails passed in Parameterised test method
+
+        [TestMethod]
+        public void MultipleEmails()
+        {
+            //Arrange
+            UserRegister user = new UserRegister();
+
+            //Act
+            var result = user.MultiEmails("praveen@gmail.com", "mrhd@click.com", "checkit@out.co.in");
+
+            //Assert
+            Assert.AreEqual("Successful Entry", result);
         }
     }
 }
