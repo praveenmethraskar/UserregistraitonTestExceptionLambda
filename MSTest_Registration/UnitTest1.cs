@@ -464,5 +464,121 @@ namespace MSTest_Registration
                 Assert.AreEqual("Password is Invalid", e.Message);
             }
         }
+
+        //UC13 Validate Using Lambda Function
+
+        //Test Method Without Using DataRow Attribute
+        [TestMethod]
+
+        //for study Puropse and to differentiate between two 
+        public void FName()
+        {
+            //Arrange
+            REGEX_Registration regex = new REGEX_Registration();
+            bool expected = true;
+            string fName = "Hemant";
+
+            //Act
+            var actual = regex.isValidFirstName(fName);
+
+            //Assert
+            Assert.AreEqual(expected, actual);
+        }
+
+        //Test Method with using DataRow Attribute
+
+        [TestMethod]
+        [DataRow("Hemant")]
+
+        //All Test cases are validate using Lambda Function
+        //To validate First Name
+        public void LambdafirstName(string firstname)
+        {
+            //Arrange
+
+            REGEX_Registration regex = new REGEX_Registration();
+
+            //Act
+            bool Fname = regex.isValidFirstName(firstname);
+
+            //Assert
+            Assert.AreEqual(true, Fname);
+
+
+        }
+
+        [TestMethod]
+        [DataRow("Dhurve")]
+
+        //To validate Last Name
+        public void LambdalastName(string lastname)
+        {
+            //Arrange
+
+            REGEX_Registration regex = new REGEX_Registration();
+
+            //Act
+            bool Lname = regex.isValidLastName(lastname);
+
+            //Assert
+            Assert.AreEqual(true, Lname);
+
+
+        }
+
+        [TestMethod]
+        [DataRow("hemantdhurve@gmail.com")]
+
+        //To validate Email
+        public void LambdaEmail(string email)
+        {
+            //Arrange
+
+            REGEX_Registration regex = new REGEX_Registration();
+
+            //Act
+            bool Email = regex.isValidEmail(email);
+
+            //Assert
+            Assert.AreEqual(true, Email);
+
+        }
+
+        [TestMethod]
+        [DataRow("91 7798051897")]
+
+        //To validate Phone Number
+        public void LambdaPhNumber(string phNumber)
+        {
+            //Arrange
+
+            REGEX_Registration regex = new REGEX_Registration();
+
+            //Act
+            bool PhoneNumber = regex.isValidPhNumber(phNumber);
+
+            //Assert
+            Assert.AreEqual(true, PhoneNumber);
+
+
+        }
+
+        [TestMethod]
+        [DataRow("aS7k%dhfg")]
+        //To validate Password
+        public void LambdaPassword(string passWord)
+        {
+            //Arrange
+
+            REGEX_Registration regex = new REGEX_Registration();
+
+            //Act
+            bool Password = regex.isValidPassword(passWord);
+
+            //Assert
+            Assert.AreEqual(true, Password);
+
+
+        }
     }
 }

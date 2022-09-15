@@ -99,5 +99,24 @@ namespace UserRegistrationTestExceptionLambda
             return Regex.IsMatch(sample, SampleEmail);
 
         }
+
+        //UC13
+
+        //Lambda Expression for First Name
+        public Func<string, bool> isValidFirstName = (firstName => Regex.IsMatch(firstName, First_Name));
+
+        //Lambda Expression for Last Name
+        public Func<string, bool> isValidLastName = (lastName => Regex.IsMatch(lastName, Last_Name));
+
+        //Lambda Expression for Email
+        public Func<string, bool> isValidEmail = (eMail => Regex.IsMatch(eMail, E_Mail));
+
+        //Lambda Expression for Phone Number
+        public Func<string, bool> isValidPhNumber = (phoneNumber => Regex.IsMatch(phoneNumber, PhNumber));
+
+        //Lambda Expression for Password
+        public Func<string, bool> isValidPassword = password => Regex.IsMatch(password, PasswordRule1) || Regex.IsMatch(password, PasswordRule4);
+
+
     }
 }
