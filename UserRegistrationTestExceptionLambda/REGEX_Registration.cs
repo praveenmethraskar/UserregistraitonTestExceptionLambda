@@ -13,9 +13,9 @@ namespace UserRegistrationTestExceptionLambda
 
         public static string First_Name = "^[A-Z]{1}[a-z]{2,10}$";
 
-        public bool ValidateFirstName(string FirstName)
+        public bool ValidateFirstName(string sample)
         {
-            return Regex.IsMatch(FirstName, First_Name);
+            return Regex.IsMatch(sample, First_Name);
 
         }
 
@@ -23,9 +23,9 @@ namespace UserRegistrationTestExceptionLambda
 
         public static string Last_Name = "^[A-Z]{1}[a-z]{2,10}$";
 
-        public bool ValidateLastName(string LastName)
+        public bool ValidateLastName(string sample)
         {
-            return Regex.IsMatch(LastName, Last_Name);
+            return Regex.IsMatch(sample, Last_Name);
 
         }
 
@@ -33,9 +33,19 @@ namespace UserRegistrationTestExceptionLambda
 
         public static string E_Mail = "^[A-Za-z]{3,}([.]{1}[A-Za-z]{3,})*[@][a-z]{2,}[.][a-z]{2,}([.][a-zA-Z]{2})?$";
 
-        public bool ValidateEmail(string Email)
+        public bool ValidateEmail(string sample)
         {
-            return Regex.IsMatch(Email, E_Mail);
+            return Regex.IsMatch(sample, E_Mail);
+
+        }
+
+        //UC4
+
+        public static string PhNumber = "^91([ ])?[6-9]{1}[0-9]{9}$";
+
+        public bool ValidatePhNumber(string sample)
+        {
+            return Regex.IsMatch(sample, PhNumber);
 
         }
     }
