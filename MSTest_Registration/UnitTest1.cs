@@ -157,5 +157,24 @@ namespace MSTest_Registration
             //Assert
             Assert.AreEqual(expected, var);
         }
+
+        //UC9
+
+        [TestMethod]
+        public void SampleEmails()
+        {
+            //Arrange
+
+            REGEX_Registration obj8 = new REGEX_Registration();
+
+            bool expected = true;
+            string SampleEmail = "abc-100@yahoo.com";
+
+            //Act
+            bool var = obj8.ValidateSampleEmail(SampleEmail);
+
+            //Assert
+            Assert.AreEqual(expected, var);
+        }
     }
 }

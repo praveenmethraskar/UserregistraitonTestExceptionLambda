@@ -88,5 +88,16 @@ namespace UserRegistrationTestExceptionLambda
             return Regex.IsMatch(sample, PasswordRule4);
 
         }
+
+
+        //UC9
+
+        public static string SampleEmail = "^[a-zA-Z0-9]+([#$%+_-][a-zA-Z0-9]+)*[@][a-zA-Z0-9]{1,}[.][a-zA-Z]{2,3}([.][a-zA-Z]{2})?$";
+
+        public bool ValidateSampleEmail(string sample)
+        {
+            return Regex.IsMatch(sample, SampleEmail);
+
+        }
     }
 }
